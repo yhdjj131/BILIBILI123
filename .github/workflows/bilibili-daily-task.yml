@@ -37,10 +37,11 @@ jobs:
       with:
         dotnet-version: 5.0.x
         
-    - name: Install libssl
+    - name: Install libssl1.1
       run: |
-       sudo apt-get update
-       sudo apt-get install -y libssl3
+       sudo apt update
+       echo "deb http://archive.ubuntu.com/ubuntu focal main universe" | sudo tee /etc/apt/sources.list.d/focal.list
+       sudo apt update && sudo apt install -y libssl1.1
       
     # 发布
     - name: Publish
