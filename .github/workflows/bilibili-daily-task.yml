@@ -37,11 +37,7 @@ jobs:
       with:
         dotnet-version: 5.0.x
         
-    - name: Install legacy libssl1.1 (via PPA)
-      run: |
-        sudo add-apt-repository ppa:rael-gc/rvm
-        sudo apt-get update
-        sudo apt-get install -y libssl1.1
+   
       
     # 发布
     - name: Publish
